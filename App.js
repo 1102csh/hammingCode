@@ -4,7 +4,7 @@ import IDSEL from './components/IDSEL';
 
 export default function App() {
 
-  // 화면 출력을 위한 각 열
+  // 화면 출력을 위한 각 열, let 으로 하고 싶은데 그렇게하면 출력이 안되길래 일단 이렇게 설정
   const [row0,setRow0] = useState([0,0,0,0,0,0,0,0,"??"]);
   const [row1,setRow1] = useState([0,0,0,0,0,0,0,0,"??"]);
   const [row2,setRow2] = useState([0,0,0,0,0,0,0,0,"??"]);
@@ -14,7 +14,7 @@ export default function App() {
   const [row6,setRow6] = useState([0,0,0,0,0,0,0,0,"??"]);
   const [row7,setRow7] = useState([0,0,0,0,0,0,0,0,"??"]);
 
-  // 코딩 실력 부족으로 인한 합의점 -> 위 useState로 선언된 row0~7을 사용하면 첫 클릭에 결과 반영이 안됨..
+  // 코딩 실력 부족으로 인한 합의점
   let tempRow0 = [0,0,0,0,0,0,0,0,"??"];
   let tempRow1 = [0,0,0,0,0,0,0,0,"??"];
   let tempRow2 = [0,0,0,0,0,0,0,0,"??"];
@@ -126,6 +126,7 @@ export default function App() {
       BINserial = DEC2BIN(serialNumber)
 
       if(selectedMode!="1400"){
+        setIsVisible(true);
         // 차트에 대입
         let j=0;
         for(let i=8;i<16;i++){
