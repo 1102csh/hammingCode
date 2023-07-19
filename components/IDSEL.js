@@ -13,44 +13,48 @@ const IDSEL = (props) => {
   const col7 = props.col7;
   const hex = props.hex? props.hex:"x";
 
+  const chartFontSize = props.chartFontSize;
+  const hexFontSize = props.hexFontSize;
+
   return (
     <View style = {styles.container}>
-      <Text style = {styles.IDSEL}>IDSEL{props.num}</Text>
-      <Text style = {[styles.col, col0 == 1 && styles.colActive]}>{col0}</Text>
-      <Text style = {[styles.col, col1 == 1 && styles.colActive]}>{col1}</Text>
-      <Text style = {[styles.col, col2 == 1 && styles.colActive]}>{col2}</Text>
-      <Text style = {[styles.col, col3 == 1 && styles.colActive]}>{col3}</Text>
-      <Text style = {[styles.col, col4 == 1 && styles.colActive]}>{col4}</Text>
-      <Text style = {[styles.col, col5 == 1 && styles.colActive]}>{col5}</Text>
-      <Text style = {[styles.col, col6 == 1 && styles.colActive]}>{col6}</Text>
-      <Text style = {[styles.col, col7 == 1 && styles.colActive]}>{col7}</Text>
-      <Text style = {styles.hex}>{hex}</Text>
+      <Text style = {[styles.IDSEL, {fontSize:chartFontSize}]}>IDSEL{props.num}</Text>
+      <View style={styles.colContainer}><Text style = {[styles.col, col0 == 1 && styles.colActive]}>{col0}</Text></View>
+      <View style={styles.colContainer}><Text style = {[styles.col, col1 == 1 && styles.colActive]}>{col1}</Text></View>
+      <View style={styles.colContainer}><Text style = {[styles.col, col2 == 1 && styles.colActive]}>{col2}</Text></View>
+      <View style={styles.colContainer}><Text style = {[styles.col, col3 == 1 && styles.colActive]}>{col3}</Text></View>
+      <View style={styles.colContainer}><Text style = {[styles.col, col4 == 1 && styles.colActive]}>{col4}</Text></View>
+      <View style={styles.colContainer}><Text style = {[styles.col, col5 == 1 && styles.colActive]}>{col5}</Text></View>
+      <View style={styles.colContainer}><Text style = {[styles.col, col6 == 1 && styles.colActive]}>{col6}</Text></View>
+      <View style={styles.colContainer}><Text style = {[styles.col, col7 == 1 && styles.colActive]}>{col7}</Text></View>
+      <View style={styles.colContainer}><Text style = {[styles.hex, {fontSize:hexFontSize}]}>{hex}</Text></View>
     </View>
   )
-
 
 }
 const styles = StyleSheet.create({
   container : {
     height: 30,
+    width: "95%",
     flexDirection : "row",
-    marginBottom: 10,
-    marginLeft: 0,
+    marginBottom: "1.7%",
+    marginLeft: "2.5%",
     justifyContent: "center",
     alignItems: "center"
   },
   IDSEL : {
     color: "green",
-    fontSize: 9.5,
-    width: 37,
-    marginTop: 6,
+    width: "10.6%",
+  },
+  colContainer : {
+    width: "8.6%",
+    marginLeft: "1.7%",
   },
   col : {
     width : 30,
     height: 30,
     color: "aqua",
     backgroundColor: "aqua",
-    marginLeft: 10,
     textAlign: "center",
     borderRadius: 50
   },
@@ -59,8 +63,7 @@ const styles = StyleSheet.create({
     backgroundColor : "red"
   },
   hex : {
-    marginLeft: 10,
-    fontSize: 20,
+    marginLeft: "10%",
     width: 30,
     fontWeight: "bold",
     color: "green"

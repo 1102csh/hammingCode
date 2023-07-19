@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, Keyboard, Dimensions, PixelRatio } from 'react-native';
 import { useState } from 'react';
 import IDSEL from './components/IDSEL';
 
@@ -101,6 +101,8 @@ export default function App() {
 
   // 프로그램 실행 함수
   const inputChart = () => {
+
+    Keyboard.dismiss();
 
     if((serialNumber!=""&&codeNumber!="")&&(serialNumber.length>4&&codeNumber.length>3)&&(serialNumber[0]!=0)){
       chart = [[],[],[],[],[],[],[],[]];
@@ -466,11 +468,20 @@ export default function App() {
     //alert(chart[3][4]+"/"+chart[2][5]+"/"+chart[1][6]+"/"+chart[0][7])
   }
 
+  // 화면 비율에 따른 반응형 UI를 위한 코드
+  const screenWidth = Dimensions.get('window').width;
+  const screenHeight = Dimensions.get('window').height;
+
+  const inputFontSize = PixelRatio.getFontScale() * screenHeight * 0.02;
+  const modeFontSize = PixelRatio.getFontScale() * screenHeight * 0.02;
+  const chartFontSize = PixelRatio.getFontScale() * screenHeight * 0.009;
+  const hexFontSize = PixelRatio.getFontScale() * screenHeight * 0.016;
+
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
 
-        <Text style={styles.text}>Code Number : </Text>
+        <Text style={[styles.text, {fontSize:inputFontSize}]}>Code Number : </Text>
         <TextInput 
           style = {styles.textInput}
           value = {codeNumber}
@@ -479,7 +490,7 @@ export default function App() {
           }}
         ></TextInput>
 
-        <Text style={styles.text}>Serial Number : </Text>
+        <Text style={[styles.text, {fontSize:inputFontSize}]}>Serial Number : </Text>
           <TextInput 
             style = {styles.textInput}
             value = {serialNumber}
@@ -507,7 +518,7 @@ export default function App() {
             inputChart();
           }}
         >
-          <Text style={[styles.modeLabel, btn==1&&styles.modeActiveLabel]}>1400</Text>
+          <Text style={[styles.modeLabel, {fontSize:modeFontSize}, btn==1&&[styles.modeActiveLabel,{fontSize:modeFontSize}]]}>1400</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
@@ -518,7 +529,7 @@ export default function App() {
             inputChart();
           }}
         >
-          <Text style={[styles.modeLabel, btn==2&&styles.modeActiveLabel]}>1600</Text>
+          <Text style={[styles.modeLabel, {fontSize:modeFontSize}, btn==2&&[styles.modeActiveLabel,{fontSize:modeFontSize}]]}>1600</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
@@ -529,7 +540,7 @@ export default function App() {
             inputChart();
           }}
         >
-          <Text style={[styles.modeLabel, btn==3&&styles.modeActiveLabel]}>1900</Text>
+          <Text style={[styles.modeLabel, {fontSize:modeFontSize}, btn==3&&[styles.modeActiveLabel,{fontSize:modeFontSize}]]}>1900</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
@@ -540,21 +551,21 @@ export default function App() {
             inputChart();
           }}
         >
-          <Text style={[styles.modeLabel, btn==4&&styles.modeActiveLabel]}>i2154</Text>
+          <Text style={[styles.modeLabel, {fontSize:modeFontSize}, btn==4&&[styles.modeActiveLabel,{fontSize:modeFontSize}]]}>i2154</Text>
         </TouchableOpacity>
       </View>
 
       <View style={styles.IDDT}>
-        <Text style={styles.IDDTTEXT}>구분</Text>
-        <Text style={styles.IDDTTEXT}>IDDT7</Text>
-        <Text style={styles.IDDTTEXT}>IDDT6</Text>
-        <Text style={styles.IDDTTEXT}>IDDT5</Text>
-        <Text style={styles.IDDTTEXT}>IDDT4</Text>
-        <Text style={styles.IDDTTEXT}>IDDT3</Text>
-        <Text style={styles.IDDTTEXT}>IDDT2</Text>
-        <Text style={styles.IDDTTEXT}>IDDT1</Text>
-        <Text style={styles.IDDTTEXT}>IDDT0</Text>
-        <Text style={styles.IDDTTEXT}>HEX</Text>
+        <Text style={[styles.IDDTTEXT, {fontSize:chartFontSize,width:"8.5%"}]}>구분</Text>
+        <Text style={[styles.IDDTTEXT, {fontSize:chartFontSize}]}>IDDT7</Text>
+        <Text style={[styles.IDDTTEXT, {fontSize:chartFontSize}]}>IDDT6</Text>
+        <Text style={[styles.IDDTTEXT, {fontSize:chartFontSize}]}>IDDT5</Text>
+        <Text style={[styles.IDDTTEXT, {fontSize:chartFontSize}]}>IDDT4</Text>
+        <Text style={[styles.IDDTTEXT, {fontSize:chartFontSize}]}>IDDT3</Text>
+        <Text style={[styles.IDDTTEXT, {fontSize:chartFontSize}]}>IDDT2</Text>
+        <Text style={[styles.IDDTTEXT, {fontSize:chartFontSize}]}>IDDT1</Text>
+        <Text style={[styles.IDDTTEXT, {fontSize:chartFontSize}]}>IDDT0</Text>
+        <Text style={[styles.IDDTTEXT, {fontSize:chartFontSize,paddingRight:5}]}>HEX</Text>
       </View>
 
       <View style={isVisible ? styles.hidden : styles.visible}>
@@ -569,6 +580,8 @@ export default function App() {
           col7 = {row0[7]}
           hex = {row0[8]}
           num = {3}
+          chartFontSize = {chartFontSize}
+          hexFontSize = {hexFontSize}
         />
         <IDSEL
           col0 = {row1[0]}
@@ -581,6 +594,8 @@ export default function App() {
           col7 = {row1[7]}
           hex = {row1[8]}
           num = {2}
+          chartFontSize = {chartFontSize}
+          hexFontSize = {hexFontSize}
         />
         <IDSEL
           col0 = {row2[0]}
@@ -593,6 +608,8 @@ export default function App() {
           col7 = {row2[7]}
           hex = {row2[8]}
           num = {1}
+          chartFontSize = {chartFontSize}
+          hexFontSize = {hexFontSize}
         />
         <IDSEL
           col0 = {row3[0]}
@@ -605,6 +622,8 @@ export default function App() {
           col7 = {row3[7]}
           hex = {row3[8]}
           num = {0}
+          chartFontSize = {chartFontSize}
+          hexFontSize = {hexFontSize}
         />
       </View>
 
@@ -620,6 +639,8 @@ export default function App() {
         col7 = {row0[7]}
         hex = {row0[8]}
         num = {7}
+        chartFontSize = {chartFontSize}
+        hexFontSize = {hexFontSize}
       />
       <IDSEL
         col0 = {row1[0]}
@@ -632,6 +653,8 @@ export default function App() {
         col7 = {row1[7]}
         hex = {row1[8]}
         num = {6}
+        chartFontSize = {chartFontSize}
+        hexFontSize = {hexFontSize}
       />
       <IDSEL
         col0 = {row2[0]}
@@ -644,6 +667,8 @@ export default function App() {
         col7 = {row2[7]}
         hex = {row2[8]}
         num = {5}
+        chartFontSize = {chartFontSize}
+        hexFontSize = {hexFontSize}
       />
       <IDSEL
         col0 = {row3[0]}
@@ -656,6 +681,8 @@ export default function App() {
         col7 = {row3[7]}
         hex = {row3[8]}
         num = {4}
+        chartFontSize = {chartFontSize}
+        hexFontSize = {hexFontSize}
       />
       <IDSEL
         col0 = {row4[0]}
@@ -668,6 +695,8 @@ export default function App() {
         col7 = {row4[7]}
         hex = {row4[8]}
         num = {3}
+        chartFontSize = {chartFontSize}
+        hexFontSize = {hexFontSize}
       />
       <IDSEL
         col0 = {row5[0]}
@@ -680,6 +709,8 @@ export default function App() {
         col7 = {row5[7]}
         hex = {row5[8]}
         num = {2}
+        chartFontSize = {chartFontSize}
+        hexFontSize = {hexFontSize}
       />
       <IDSEL
         col0 = {row6[0]}
@@ -692,6 +723,8 @@ export default function App() {
         col7 = {row6[7]}
         hex = {row6[8]}
         num = {1}
+        chartFontSize = {chartFontSize}
+        hexFontSize = {hexFontSize}
       />
       <IDSEL
         col0 = {row7[0]}
@@ -704,6 +737,8 @@ export default function App() {
         col7 = {row7[7]}
         hex = {row7[8]}
         num = {0}
+        chartFontSize = {chartFontSize}
+        hexFontSize = {hexFontSize}
       />
       </View>
       <Text> Code : {codeNumber} / CodeBIN : {DEC2BIN(codeNumber[0])}{DEC2BIN(codeNumber[1])}{DEC2BIN(codeNumber[2])}{DEC2BIN(codeNumber[3])}</Text>
@@ -718,24 +753,24 @@ const styles = StyleSheet.create({
     backgroundColor: "black"
   },
   inputContainer : {
-    marginTop: 50,
+    marginTop: "10%",
     marginLeft: 10
   },
   text : {
     fontWeight : "bold",
     color: "green",
-    fontSize : 20,
     marginBottom : 10
   },
   textInput : {
-    borderBottomWidth : 1,
-    borderBottomColor : "lightgray",
+    borderWidth:1,
+    borderColor:"transparent",
     borderRadius : 15,
     backgroundColor : "yellow",
     color: "red",
     fontSize: 30,
     fontWeight: "bold",
     width: "90%",
+    height: 50,
     marginBottom : 10,
     marginLeft : 10,
     paddingLeft : 10,
@@ -755,27 +790,30 @@ const styles = StyleSheet.create({
   },
   IDDT : {
     flexDirection : "row",
-    marginLeft: 4,
+    marginLeft: "2.5%",
+    width: "95%",
+    marginBottom: 7,
+    justifyContent: "center",
+    alignItems: "center",
   },
   IDDTTEXT : {
     color: "green",
-    width:30,
-    marginLeft:10,
-    fontSize: 10,
-    justifyContent: "center",
-    alignItems: "center"
+    width: "8.6%",
+    marginLeft: "1.7%",
+    textAlign: "center",
   },
   modeContainer : {
     width: "100%",
     height: 60,
-    marginBottom: 30,
-    flexDirection: "row"
+    marginBottom: "5%",
+    flexDirection: "row",
   },
   mode : {
     borderWidth: 1,
     borderColor: "green",
     borderRadius: 10,
-    width: 90,
+    width: "21.6%",
+    height: "100%",
     marginLeft: 10,
     justifyContent: "center",
     alignItems: "center"
