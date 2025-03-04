@@ -10,16 +10,16 @@
 
 <h2>주요 기능</h2>
 <ul>
-<li>✔ 해밍코드 생성</li>
-<li>✔ 사용자가 직접 데이터를 입력</li>
-<li>✔ 모바일 환경에 최적화된 UI 제공</li>
+<li> 해밍코드 생성</li>
+<li> 사용자가 직접 데이터를 입력</li>
+<li> 모바일 환경에 최적화된 UI 제공</li>
 </ul>
   
 <h2>기술 스택</h2>
 <ul>
-<li>✔ React Native</li>
-<li>✔ JavaScript/TypeScript</li>
-<li>✔ Expo</li>
+<li> React Native</li>
+<li> JavaScript/TypeScript</li>
+<li> Expo</li>
 </ul>
 
 <h2>프로젝트 미리보기</h2>
