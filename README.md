@@ -18,5 +18,7 @@
 기술 스택
 
 React Native
+
 JavaScript/TypeScript
+
 Expo
