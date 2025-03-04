@@ -21,3 +21,10 @@
 <li>✔ JavaScript/TypeScript</li>
 <li>✔ Expo</li>
 </ul>
+
+<h2>프로젝트 미리보기</h2>
+✔ 엑셀 환경
+![image](https://github.com/user-attachments/assets/a5b4fd53-5e76-44f8-8f46-f2f2a799f3c0)
+
+✔ 모바일 환경
+![image](https://github.com/user-attachments/assets/67144808-c0ca-481f-a469-3510b06168f4)
