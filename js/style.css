@@ -1,0 +1,139 @@
+html{
+    background-color:black;
+    color:green;
+    user-select:none;
+}
+.input_number{
+    position:absolute;
+    font-size:5em;
+    font-weight:bold;
+}
+.input_number:nth-child(2){
+    top:4em;
+}
+.cal_wrap{
+    display:none;
+}
+.num{
+    font-size:1em;
+    width:15em;
+    height:2em;
+    background-color:yellow;
+    color:red;
+    font-weight:bold;
+    text-align: center;
+
+}
+#serial_number{
+    position:absolute;
+    top:6em;
+    width:14em;
+    left:25em;
+    font-size:1.2em;
+}
+#binary_serial{
+    position:absolute;
+    top:8em;
+    width:14em;
+    left:25em;
+    font-size:1.2em;
+}
+#type_number{
+    position:absolute;
+    top:6em;
+    width:14em;
+    font-size:1.2em;
+}
+#binary_type{
+    position:absolute;
+    top:8em;
+    width:14em;
+    font-size:1.2em;
+}
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background-color:aqua;
+    border:1px solid black;
+    
+    width:3em;
+    height:3em;
+    top:15em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.sel{
+    position:absolute;
+    font-size:2.5em;
+    width:3.3em;
+    height:2.25em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.group{
+    display:none;
+}
+#result{
+    display:block;
+}
+#result2{
+    display:none;
+}
+#result3{
+    display:none;
+}
+#result4{
+    display:none;
+}
+#circle_wrap{
+    display:none;
+}
+.btn{
+    position:absolute;
+    border:1px solid green;
+    background-color: black;
+    color:green;
+    font-size:3em;
+    cursor:pointer;
+    top:13.5em;
+    width:7em;
+    height:2em;
+    left:2em;
+    text-align: center;
+    transition:all ease 0.5s;
+}
+.btn:nth-of-type(2){
+    left:9em;
+}
+.btn:nth-of-type(3){
+    left:16em;
+}
+.btn:nth-of-type(4){
+    left:22.97em;
+}
+.hex{
+    position: absolute;
+    border:1px solid green;
+    background-color:black;
+    width:11em;
+    height:2.5em;
+    font-size:3em;
+    text-align:center;
+    font-weight:bold;
+    color:green;
+}
+.logo{
+    position:absolute;
+    font-size:8em;
+    top:14em;
+    left:4em;
+    letter-spacing:0.1em;
+    color:purple;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px purple,
+    0 0 82px purple, 0 0 92px purple, 0 0 102px purple, 0 0 151px purple;
+}
+#hex_wrap{
+    display:none;
+}
