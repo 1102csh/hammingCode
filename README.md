@@ -30,4 +30,8 @@
 
 ✔ 모바일 환경
 
-![image](https://github.com/user-attachments/assets/67144808-c0ca-481f-a469-3510b06168f4)
+![image](https://github.com/user-attachments/assets/7554f461-afe6-4489-9599-94bd63e2b16f)
+
+✔ 웹 환경
+
+![image](https://github.com/user-attachments/assets/2f836c97-5c5b-418d-8c00-5154fe265c55)
