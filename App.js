@@ -104,7 +104,7 @@ export default function App() {
 
     Keyboard.dismiss();
 
-    if((serialNumber!=""&&codeNumber!="")&&(serialNumber.length>4&&codeNumber.length>3)&&(serialNumber[0]!=0)){
+    if((serialNumber!=""&&codeNumber!="")){
       chart = [[],[],[],[],[],[],[],[]];
 
       // 눌린 버튼 UI 변화 처리
